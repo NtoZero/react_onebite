@@ -24,7 +24,7 @@ funcA(...arr1);
 
 // 2. Rest 매개변수
 // -> Rest는 나머지 , 나머지 매개변수
-
+        // Rest 매개변수는 마지막에 와야 한다. 
 function funcB(one, two, ...ds) {
   console.log(ds);
 }
