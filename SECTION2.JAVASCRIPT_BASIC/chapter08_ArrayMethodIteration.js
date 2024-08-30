@@ -48,17 +48,17 @@ console.log(`findedIndex: ${findedIndex}`);
 let objectArr = [
     { name: "이정환" },
     { name: "홍길동" },
-  ];
-  
-  console.log(
-    `indexOf는 참조값만 비교하는 얕은 복사다. : ${objectArr.indexOf({ name: "이정환" })}`
-  );
-  
-  console.log(
-    `findIndex Predicate :  ${objectArr.findIndex(
-      (item) => item.name === "이정환"
-    )}`
-  );
+];
+
+console.log(
+`indexOf는 참조값만 비교하는 얕은 복사다. : ${objectArr.indexOf({ name: "이정환" })}`
+);
+
+console.log(
+`findIndex Predicate :  ${objectArr.findIndex(
+    (item) => item.name === "이정환"
+)}`
+);
 
 
 // 5. find
