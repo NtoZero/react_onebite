@@ -1,35 +1,32 @@
 import './App.css'
-import Header from "./components/Header.jsx";
-import Main from "./components/Main.jsx";
-import Footer from "./components/Footer.jsx";
-import Button from "./components/Button.jsx";
+import {useState} from "react";
 
 /* 함수 컴포넌트 */
 
 /*부모 컴포넌트 App */
 function App() {
 
-    const buttonProps = {
-        text: "메일",
-        color: "red",
-        a: 1,
-        b: 2,
-        c: 3
-    };
+    const [state, setState] = useState(0);
+    const [light, setLight] = useState("OFF");
+    // let light = "OFF"; // 단순 변수 값을 변경한다고 리렌더링을 발생시키지 않음.
 
   return (
     <>
-        {/*자식 컴포넌트 Header */}
-        <Header />  {/*App.jsx에서 App 컴포넌트 내부에 Header 컴포넌트 추가*/}
-        <Main />
-        <Footer />
-        {/*Props => 값을 전달할 수 있음*/}
-        <Button {...buttonProps} />
-        <Button text={"카페"} />
-        <Button text={"블로그"} >
-            <div>자식요소</div>
-            <Header />
-        </Button>
+        <div>
+            <h1>{light}</h1>
+            <button onClick={() => {
+                setLight(light === "OFF" ? "ON" : "OFF");
+                // light = light === "ON" ? "OFF" : "ON";
+                // console.log(light);
+            }}>전구 {light === "ON" ? "끄기" : "켜기"}
+            </button>
+        </div>
+        <div>
+            <h1>{state}</h1>
+            <button onClick = {() =>{
+                setState(state + 1);
+            }}> + 버튼 </button>
+        </div>
     </>
   )
 }
