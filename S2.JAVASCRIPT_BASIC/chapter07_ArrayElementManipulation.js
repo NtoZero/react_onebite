@@ -13,7 +13,6 @@ const newLength = arr1.push(4, 5, 6, 7);
 let arr2 = [1, 2, 3];
 const poppedItem = arr2.pop();
 
-
 /* shift와 unshift 메서드는 push pop보다 느리게 동작 */
 // 3. shift
 // 배열의 맨 앞에 있는 요소를 제거, 반환
@@ -21,7 +20,6 @@ let arr3 = [1, 2, 3];
 const shiftedItem = arr3.shift();
 
 // console.log(arr3, "shiftedItem : " + shiftedItem);
-
 
 // 4. unshift
 // 배열의 맨 앞에 새로운 요소를 추가하는 메서드
@@ -35,7 +33,6 @@ let arr5 = [1, 2, 3, 4, 5];
 let sliced = arr5.slice(2, 5); // 2번 인덱스부터 5번 인덱스 '전'까지
 let sliced2 = arr5.slice(2); // 2번 인덱스부터 끝까지
 let sliced3 = arr5.slice(-3); // 뒤에서부터 3개 자르기
-
 
 // 6. concat
 // 두개의 서로 다른 배열을 이어 붙여서 새로운 배열을 반환

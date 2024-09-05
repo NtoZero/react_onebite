@@ -1,6 +1,6 @@
 // 1. Date 객체를 생성하는 방법
 let date1 = new Date(); // 생성자
-console.log(date1); 
+console.log(date1);
 
 let date2 = new Date(1997, 1, 7, 23, 59, 59);
 console.log(date2); //"1997-02-07T14:59:59.000Z"

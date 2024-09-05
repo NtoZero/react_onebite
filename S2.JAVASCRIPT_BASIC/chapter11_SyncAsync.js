@@ -1,6 +1,6 @@
 /* 동기 : 여러 개의 작업을 순서대로, 하나씩 처리 */
 function taskB() {
-    console.log(2);
+  console.log(2);
 }
 // console.log(1);
 // taskB();
@@ -14,11 +14,11 @@ function taskB() {
 console.log(1);
 // 비동기 함수. 브라우저 엔진/Node.js의 Web APIs에서 3초를 세고, 해당 작업이 끝나면 자스 엔진의 이벤트 루프에 알림.
 setTimeout(() => {
-    console.log(2)
-}, 3000); // 3000ms 이후 콜백함수 실행 
-setTimeout(() => { 
-    console.log(4)
-}, 1000); // 1000ms 이후 콜백함수 실행 
+  console.log(2);
+}, 3000); // 3000ms 이후 콜백함수 실행
+setTimeout(() => {
+  console.log(4);
+}, 1000); // 1000ms 이후 콜백함수 실행
 console.log(3);
 // => 1 3 4 2 순서로 출력됨
 

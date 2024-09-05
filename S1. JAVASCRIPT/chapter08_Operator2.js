@@ -18,7 +18,6 @@ let userNickName = "Winterlood";
 let displayName = userName ?? userNickName;
 // console.log(displayName);
 
-
 /* 2. typeof 연산자
 -> 값의 타입을 문자열로 반환하는 기능을 하는 연산자
 */
@@ -28,7 +27,6 @@ var7 = true;
 
 let t1 = typeof var7;
 // console.log(t1);
-
 
 /* 3. 삼항 연산자
     -> 항을 3개 사용

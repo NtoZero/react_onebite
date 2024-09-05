@@ -7,7 +7,6 @@ let str = "20";
 const result = num + str;
 // console.log(result);
 
-
 /* 2. 명시적 형 변환 */
 //  -> 프로그래머 내장함수 등을 이용해 직접 형 변환을 명시
 // -> 문자열 -> 숫자

@@ -7,19 +7,19 @@
 let a = 1;
 
 function funcA() {
-    // 지역 스코프
-    let b = 2;
-    console.log(b);
+  // 지역 스코프
+  let b = 2;
+  console.log(b);
 }
 
 funcA();
 
 if (true) {
-    let c = 1;
+  let c = 1;
 }
 
 for (let i = 0; i < 10; i++) {
-let d = 1;
+  let d = 1;
 }
 
 funcB();

@@ -13,13 +13,15 @@ JavaScript에서 **호이스팅(Hoisting)**이란 변수, 함수 선언문이 �
 그러나 실제로는 코드의 물리적인 이동이 일어나는 것이 아니라, 
 JavaScript 엔진이 코드 실행 전에 변수와 함수 선언을 미리 메모리에 등록하는 과정을 의미합니다. */
 
-function getArea (width, height) { // width, height는 매개변수
-    let area = width * height;
-    
-    function another() { /* 중첩 함수 */
-        console.log("another");
-    }
-    another();
+function getArea(width, height) {
+  // width, height는 매개변수
+  let area = width * height;
 
-    return area;
+  function another() {
+    /* 중첩 함수 */
+    console.log("another");
+  }
+  another();
+
+  return area;
 }

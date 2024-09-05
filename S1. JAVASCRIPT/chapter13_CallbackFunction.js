@@ -4,17 +4,16 @@
     즉, 콜백 함수는 함수 내에서 동작이 완료되거나 특정 조건이 충족되었을 때 호출되는 함수
 */
 
-
 /* 1. 콜백함수 */
 function main(value) {
-    console.log(1);
-    console.log(2);
-    value();
-    console.log("end");
+  console.log(1);
+  console.log(2);
+  value();
+  console.log("end");
 }
 
 function sub() {
-    console.log("i am sub");
+  console.log("i am sub");
 }
 
 // main(sub);
@@ -31,21 +30,21 @@ function sub() {
 
 /* 2. 콜백함수의 활용 */
 function repeat(count) {
-    for(let idx = 1; idx <= count; idx++) {
-        console.log(idx);
-    }
+  for (let idx = 1; idx <= count; idx++) {
+    console.log(idx);
+  }
 }
 
 function repeatDouble(count) {
-    for(let idx = 1; idx <= count; idx++) {
-        console.log(idx * 2);
-    }
+  for (let idx = 1; idx <= count; idx++) {
+    console.log(idx * 2);
+  }
 }
 
 function repeatTriple(count) {
-    for(let idx = 1; idx <= count; idx++) {
-        console.log(idx * 2);
-    }
+  for (let idx = 1; idx <= count; idx++) {
+    console.log(idx * 2);
+  }
 }
 
 // repeatDouble(5);
@@ -53,19 +52,19 @@ function repeatTriple(count) {
 
 /* 2-1. 콜백함수를 이용한 리팩토링 */
 function repeat2(count, callback) {
-    for(let idx = 1; idx <= count; idx++) {
-        callback(idx);
-    }
+  for (let idx = 1; idx <= count; idx++) {
+    callback(idx);
+  }
 }
 
-repeat2(5, function(idx) {
-    console.log(idx);
+repeat2(5, function (idx) {
+  console.log(idx);
 });
 
-repeat2(5, function(idx) {
-    console.log(idx * 2);
+repeat2(5, function (idx) {
+  console.log(idx * 2);
 });
 
 repeat2(5, (idx) => {
-    console.log(idx * 3);
+  console.log(idx * 3);
 });
