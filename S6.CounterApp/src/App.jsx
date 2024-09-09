@@ -17,7 +17,7 @@ function App() {
         <Viewer count={count} />
       </section>
       <section>
-        <Controller onClickButton={onClickButton()} />
+        <Controller onClickButton={onClickButton} />
       </section>
     </div>
   );
