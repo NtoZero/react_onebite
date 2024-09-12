@@ -7,6 +7,7 @@ import List from "./components/List.jsx";
 function App() {
   const [todos, setTodos] = useState(mockData);
   const idRef = useRef(3);
+
   const onCreate = (content) => {
     const newTodo = {
       id: idRef.current++,
@@ -16,11 +17,33 @@ function App() {
     };
     setTodos([newTodo, ...todos]);
   };
+
+  const onUpdate = (targetId) => {
+    // todos State의 값들 중에
+    // targetId와 일치하는 id를 갖는 투두 아이템의 isDone 변경
+    // 인수: todos 배열에서 targetId와 일치하는 id를 갖는 요소의 데이터만 딱 바꾼 배열
+
+    setTodos(
+      todos.map((todo) =>
+        targetId === todo.id
+          ? { ...todo, isDone: !todo.isDone } //
+          : todo
+      )
+    );
+
+    /*setTodos(todos.map((todo) => {
+      if(targetId === todo.id) {
+        return {...todo, isDone: !todo.isDone}
+      }
+      return todo;
+    }))*/
+  };
+
   return (
     <div className="App">
       <Header />
       <Editor onCreate={onCreate} />
-      <List todos={todos} />
+      <List todos={todos} onUpdate={onUpdate} />
     </div>
   );
 }
