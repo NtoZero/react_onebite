@@ -24,9 +24,9 @@ npm install --save-dev babel-jest @babel/core @babel/preset-env
 }
 ```
 
-## 3. jest.config.js 파일 설정
-- Jest 설정 파일을 생성하고 Babel을 사용하여 변환하도록 Jest에 지시합니다. 프로젝트 루트 디렉토리에 jest.config.js 파일을 만들고 다음과 같이 작성합니다:
-- jest.config.js
+## 3. jest.config.mjs 파일 설정
+- Jest 설정 파일을 생성하고 Babel을 사용하여 변환하도록 Jest에 지시합니다. 프로젝트 루트 디렉토리에 jest.config.mjs 파일을 만들고 다음과 같이 작성합니다:
+- jest.config.mjs
 ```js
 export default {
     transform: {

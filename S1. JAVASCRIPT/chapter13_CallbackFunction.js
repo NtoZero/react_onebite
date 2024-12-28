@@ -19,8 +19,8 @@ function sub() {
 // main(sub);
 
 /* 1-1. 콜백함수와 익명함수의 결합 */
-// main(function() {
-//     console.log("i am sub");
+// main(function () {
+//   console.log("i am sub");
 // });
 
 /* 1-2. 콜백함수와 화살표함수의 결합 */
@@ -43,7 +43,7 @@ function repeatDouble(count) {
 
 function repeatTriple(count) {
   for (let idx = 1; idx <= count; idx++) {
-    console.log(idx * 2);
+    console.log(idx * 3);
   }
 }
 

@@ -2,6 +2,7 @@ describe("명시적 형변환", () => {
   test("parseInt()로 문자열을 int로 변경할 수 있다.", () => {
     const result = parseInt("1000");
     expect(typeof result).toBe("number");
+    console.log('typeof result: `parseInt("1000")` : ' + typeof result);
   });
 
   test("parseInt 함수로 정률 문자열을 변환하면 소수점은 절삭된다.", () => {

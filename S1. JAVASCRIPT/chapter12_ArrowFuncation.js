@@ -17,7 +17,10 @@ let varB = function funcB() {
 // varB(); // funcB
 // funcB(); // 선언 X
 
-/* 2. 화살표 함수 */
+/* 2. 화살표 함수
+ * ES6(ECMAScript 2015)**에서 도입된 간결한 함수 표현식
+ * 기존의 function 키워드를 대체하며, 더 짧은 문법과 this 바인딩 방식의 차이
+ * */
 let varC = () => {
   return 1;
 };
