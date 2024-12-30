@@ -28,7 +28,9 @@ let age = person["age"]; // 괄호표기법 키는 문자열 사용
 
 let property = "hobby";
 let hobby = person[property];
-// console.log(hobby)
+console.log("person[property] 출력 전------------------------------" + `person[property]`);
+console.log(hobby); // 테니스
+console.log("person[property] 출력 후------------------------------");
 
 /* 3.2. 새로운 프로퍼티를 추가하는 방법 */
 person.job = "fe developer";

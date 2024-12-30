@@ -10,6 +10,7 @@ function funcA() {
   // 지역 스코프
   let b = 2;
   console.log(b);
+  console.log(a);
 }
 
 funcA();
