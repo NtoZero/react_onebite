@@ -1,4 +1,4 @@
-describe("Spread 연산자", () => {
+describe("Spread 연산자는 배열(혹은 객체, 이터러블 등)의 값을 펼쳐서 사용할 때 쓴다.", () => {
   test("배열 Spread 연산자", () => {
     let arr1 = [1, 2, 3];
     let arr2 = [4, ...arr1, 5, 6];
@@ -27,10 +27,11 @@ describe("Spread 연산자", () => {
 });
 
 describe("Rest 매개변수", () => {
-  test("테스트1", () => {
+  test("Rest 매개변수는 함수 정의에서 여러 개의 인자를 하나의 배열로 모아 받을 때 사용한다.", () => {
     let arr1 = [1, 2, 3];
     let arr2 = [4, ...arr1, 5, 6];
     function funcB(one, two, ...ds) {
+      // 여러 개의 인자가 하나의 배열이 된다.
       console.log(ds);
     }
 
