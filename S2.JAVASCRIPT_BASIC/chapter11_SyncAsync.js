@@ -11,15 +11,19 @@ function taskB() {
 
 /* 비동기란? : 여러 개의 작업을 순서대로 처리하지 않는 방식. 여러 작업을 동시에 처리 */
 // 결과값을 이용하고 싶다면? 각각의 작업에 콜백함수를 붙여서 실행해 줄 수 있음.
-console.log(1);
-// 비동기 함수. 브라우저 엔진/Node.js의 Web APIs에서 3초를 세고, 해당 작업이 끝나면 자스 엔진의 이벤트 루프에 알림.
-setTimeout(() => {
-  console.log(2);
-}, 3000); // 3000ms 이후 콜백함수 실행
-setTimeout(() => {
-  console.log(4);
-}, 1000); // 1000ms 이후 콜백함수 실행
-console.log(3);
+function asyncFunction() {
+  console.log(1);
+  // 비동기 함수. 브라우저 엔진/Node.js의 Web APIs에서 3초를 세고, 해당 작업이 끝나면 자스 엔진의 이벤트 루프에 알림.
+  setTimeout(() => {
+    console.log(2);
+  }, 3000); // 3000ms 이후 콜백함수 실행
+  setTimeout(() => {
+    console.log(4);
+  }, 1000); // 1000ms 이후 콜백함수 실행
+  console.log(3);
+}
+asyncFunction();
+
 // => 1 3 4 2 순서로 출력됨
 
 /* 자바스크립트는 싱글 쓰레드 엔진인데 어떻게 동시에 작업을 수행할까?
@@ -29,3 +33,44 @@ console.log(3);
     4. 2의 비동기 함수 작업이 끝나면 콜백함수를 다시 자바스크립트 이벤트 루프의 콜백 큐에 위임
     5. 자바스크립트의 콜 스택이 비어 있는 경우 콜백 큐에서 대기 중인 콜백함수 실행
 */
+
+function getDB() {
+  let data;
+  setTimeout(() => {
+    data = 10;
+  }, 3000); // DB에서 값을 가져오는데 3초의 시간이 걸린다고 가정
+  return data;
+}
+
+function main1() {
+  let value = getDB();
+  value *= 2;
+  console.log(`value : ${value}`);
+}
+
+// main 스레드 실행
+main1(); // NaN
+
+// 콜백함수 callback 인자로 받기
+function getDB2(callback) {
+  // if (typeof callback !== "function") {
+  //   console.error("callback is not a function:", callback);
+  //   return;
+  // }
+
+  setTimeout(() => {
+    // 1. DB에서 데이터를 받은 후
+    const data = 100;
+    // 2. 콜백함수 실행
+    callback(data); // callback은 함수로 전달받은 값을 실행
+  }, 3000);
+}
+
+function main2() {
+  getDB2((value) => {
+    let data = value * 2;
+    console.log(`data의 값 : ${data}`);
+  });
+}
+
+main2();
