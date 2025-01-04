@@ -16,7 +16,7 @@
 */
 
 /* 1. 비동기 작업 실행 */
-/* Promise 객체의 상태는 2초 후에 fulfilled 상태가 되며, 
+/* Promise 객체의 상태는 2초 후에 fulfilled 상태가 되며,
 resolve 함수에 의해 Promise가 성공적으로 완료되었음을 나타냅니다.
  따라서 3초 후에 console.log(promise)는 다음과 같은 결과를 출력합니다: */
 const promise = new Promise((reslove, reject) => {
@@ -40,10 +40,11 @@ const promise = new Promise((reslove, reject) => {
 
 /* 2. 비동기 작업 상태 관리 */
 // then 메서드 (-> 그 후에)
+// 이 시점에 디버깅 해봐도 Promise 객체의 executor 함수가 완료되지 않은 시점이라 Pending 상태이다.
 promise
   .then((value) => {
     console.log(value);
-  }) // then은 promise를 다시 반환하므로, promise chaning 가능
+  }) // then은 promise를 다시 반환하므로, promise chaining 가능
   .catch((value) => {
     console.log(value);
   });
