@@ -5,12 +5,27 @@ describe("Promise.then vs setTimeout 실행 순서", () => {
     출처: https://inpa.tistory.com/entry/🔄-자바스크립트-이벤트-루프-구조-동작-원리 [Inpa Dev 👨‍💻:티스토리]
   * */
 
+  test("Promise.then이 setTimeout보다 먼저 실행된다. 1", (done) => {
+    console.log("Start!");
+
+    setTimeout(() => {
+      console.log("Timeout!");
+      done();
+    }, 0);
+
+    Promise.resolve("Promise!").then((res) => console.log(res));
+
+    console.log("End!");
+    Promise.resolve("Promise! 2").then((res) => console.log(res));
+    Promise.resolve("Promise! 3").then((res) => console.log(res));
+  });
+
   /*
   * 1. 동기 코드 종료 → 마이크로태스크(Promise) 실행 → "Promise" 배열에 푸시
     2. 마이크로태스크가 끝난 뒤 → 태스크 큐(setTimeout) 실행 → "setTimeout" 배열에 푸시
     3. 그리고 나서 expect로 최종 순서 검사 → 테스트 종료(done())
   * */
-  test("Promise.then이 setTimeout보다 먼저 실행된다.", (done) => {
+  test("Promise.then이 setTimeout보다 먼저 실행된다. 2", (done) => {
     const executionOrder = [];
 
     Promise.resolve().then(() => {
