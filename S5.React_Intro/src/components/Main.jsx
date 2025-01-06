@@ -25,11 +25,11 @@ const Main = () => {
         //   }
         // }
       >
-        로그인
+        로그아웃
       </div>
     );
   } else {
-    return <div>로그아웃</div>;
+    return <div>로그인</div>;
   }
 
   //   return <>{user.isLogin ? <div>로그인</div> : <div>로그아웃</div>}</>;
