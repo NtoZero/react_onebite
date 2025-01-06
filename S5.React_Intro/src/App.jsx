@@ -5,6 +5,9 @@ import Footer from "./components/Footer.jsx";
 import Button from "./components/Button.jsx";
 import Register from "./components/Register.jsx";
 import HookExam from "./components/HookExam.jsx";
+import Bulb from "./components/Bulb.jsx";
+import Counter from "./components/Counter.jsx";
+import Timer from "./components/Timer.jsx";
 
 /*부모 컴포넌트 App */
 function App() {
@@ -20,6 +23,9 @@ function App() {
         <div>자식 요소</div>
         <Header />
       </Button>
+      <Bulb />
+      <Counter />
+      <Timer />
     </>
   );
 }

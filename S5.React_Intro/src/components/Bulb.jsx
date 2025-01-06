@@ -3,7 +3,7 @@ import { useState } from "react";
 const Bulb = () => {
   const [light, setLight] = useState("OFF");
 
-  console.log(light);
+  console.log(light); // state 변경으로 인한 리렌더링 => 함수 동작
   return (
     <div>
       {light === "ON" ? (
