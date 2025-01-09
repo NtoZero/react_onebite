@@ -30,7 +30,8 @@ function App() {
       <Timer />*/}
       {/*<Register_useState />
       <Register_useState2 />*/}
-      <Register_useRef />
+      {/*<Register_useRef />*/}
+      <HookExam />
     </>
   );
 }

@@ -26,6 +26,8 @@ const Register_useRef = () => {
     count++; // 단순 변수는 useRef 객체와 달리 컴포넌트의 리렌더링에서 자유롭지 못함.
     // 그렇다고 컴포넌트 외부에 변수를 선언하면 부모 컴포넌트에서 자식 컴포넌트를 두 번 호출할 때 공유변수 문제가 발생한다.
     // console.log(count);
+    console.log("e.target: ");
+    console.log(e.target);
     console.log("inputRef: ");
     console.log(inputRef);
     console.log("inputRef.current: ");

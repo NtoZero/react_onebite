@@ -13,7 +13,7 @@ const Register_useState = () => {
   const [bio, setBio] = useState("");
 
   const onChangeName = (e) => {
-    // console.log(e);
+    console.log(e.target);
     console.log(e.target.value);
     setName(e.target.value);
   };
