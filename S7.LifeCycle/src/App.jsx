@@ -4,7 +4,7 @@ import "./App.css";
 import { useState, useEffect, useRef } from "react";
 import Even from "./components/Even.jsx";
 
-function App() {
+function App2() {
   const [count, setCount] = useState(0);
   const [input, setInput] = useState("");
 

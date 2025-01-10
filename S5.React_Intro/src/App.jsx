@@ -11,7 +11,7 @@ import Bulb from "./components/Bulb.jsx";
 import Counter from "./components/Counter.jsx";
 import Timer from "./components/Timer.jsx";
 
-/*부모 컴포넌트 App */
+/*부모 컴포넌트 App2 */
 function App() {
   return (
     <>

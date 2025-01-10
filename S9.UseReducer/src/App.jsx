@@ -15,7 +15,7 @@ function reducer(state, action) {
   }
 }
 
-function App() {
+function App2() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 

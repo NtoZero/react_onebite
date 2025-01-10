@@ -3,7 +3,7 @@ import Controller2 from "./components/practice/Controller2.jsx";
 import "./App.css";
 import { useState } from "react";
 
-function App() {
+function App2() {
   const [count, setCount] = useState(0);
 
   const onClickButtonFunc = (value) => {
@@ -23,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default App2;

@@ -4,7 +4,7 @@ import Editor from "./components/Editor.jsx";
 import Header from "./components/Header.jsx";
 import List from "./components/List.jsx";
 
-function App() {
+function App2() {
   const [todos, setTodos] = useState(mockData);
   const idRef = useRef(3);
 

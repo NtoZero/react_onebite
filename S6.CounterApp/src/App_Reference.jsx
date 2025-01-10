@@ -3,7 +3,7 @@ import Controller from "./components/exam/Controller.jsx";
 import "./App.css";
 import { useState } from "react";
 
-function App() {
+function App2() {
   const [count, setCount] = useState(0);
 
   const onClickButton = (value) => {
