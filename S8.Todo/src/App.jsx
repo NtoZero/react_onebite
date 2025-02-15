@@ -6,6 +6,7 @@ import List from "./components/List.jsx";
 
 function App2() {
   const [todos, setTodos] = useState(mockData);
+  // 재 렌더링되어도 상태값 기억하기 위한 useRef 사용
   const idRef = useRef(3);
 
   const onCreate = (content) => {
@@ -74,4 +75,4 @@ const mockData = [
   },
 ];
 
-export default App;
+export default App2;
