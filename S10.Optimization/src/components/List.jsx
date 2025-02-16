@@ -35,7 +35,7 @@ const List = ({ todos, onUpdate, onDelete }) => {
   const { totalCount, doneCount, notDoneCount } = getAnalyzedData();*/
 
   const { totalCount, doneCount, notDoneCount } = useMemo(() => {
-    console.log("getAnalzedData 호출!");
+    console.log("useMemo 호출!");
     const totalCount = todos.length;
     const doneCount = todos.filter((todo) => todo.isDone).length;
     const notDoneCount = totalCount - doneCount;
