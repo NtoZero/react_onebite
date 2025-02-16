@@ -1,4 +1,4 @@
-import { useState, useRef, useReducer, useCallback } from "react";
+import { useState, useRef, useReducer, useCallback, createContext } from "react";
 import "./App.css";
 import Editor from "./components/Editor.jsx";
 import Header from "./components/Header.jsx";
@@ -15,7 +15,10 @@ function reducer(state, action) {
   }
 }
 
-function App2() {
+export const TodoContext = createContext();
+// console.log(TodoContext.Provider);
+
+function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
@@ -48,8 +51,17 @@ function App2() {
   return (
     <div className="App">
       <Header />
-      <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+      <TodoContext.Provider
+        value={{
+          todos,
+          onCreate,
+          onUpdate,
+          onDelete,
+        }}
+      >
+        <Editor />
+        <List />
+      </TodoContext.Provider>
     </div>
   );
 }
