@@ -75,4 +75,4 @@ const mockData = [
   },
 ];
 
-export default App;
+export default App2;
