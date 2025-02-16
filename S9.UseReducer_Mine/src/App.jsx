@@ -4,18 +4,22 @@ import Editor from "./components/Editor.jsx";
 import Header from "./components/Header.jsx";
 import List from "./components/List.jsx";
 
-function reducer(state, action) {
-  switch (action.type) {
+const reducer = (state, dispatch) => {
+  switch (dispatch.type) {
     case "CREATE":
-      return [action.data, ...state];
+      return [dispatch.data, ...state];
     case "UPDATE":
-      return state.map((todo) => (todo.id === action.data ? { ...todo, isDone: !todo.isDone } : todo));
+      return state.map((todo) =>
+        todo.id === dispatch.data //
+          ? { ...todo, isDone: !todo.isDone }
+          : { ...todo }
+      );
     case "DELETE":
-      return state.filter((todo) => todo.id !== action.data);
+      return state.filter((todo) => todo.id !== dispatch.data);
   }
-}
+};
 
-function App2() {
+function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
@@ -26,7 +30,7 @@ function App2() {
         id: idRef.current++,
         isDone: false,
         content: content,
-        date: new Date().getTime(),
+        date: new Date(),
       },
     });
   };
@@ -75,4 +79,4 @@ const mockData = [
   },
 ];
 
-export default App2;
+export default App;
